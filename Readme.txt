@@ -12,3 +12,6 @@ Day 3&4:
 Day 5: Flow control & Exceptions:
 	- contine cele 2 exemple din prezentarea pe aceasta tema
 	- vei gasi 2 proiecte: ExceptionChaining si FinallyExample
+Day 6: Generics 
+	- contine un proiect cu cateva exemple din prezentarea pe aceasta tema
+	
