@@ -31,10 +31,10 @@ Day 8: - IO
 		-> fisierul Main.java contine o serie de teste privind serializarea si deserializare unei astfel de liste si afisarea rezultatelor
 	- SerializeExamples: contine 2 pachete:
 		->JustSuperclassSerializable: in care implementez o clasa parinte si o clasa care extinde aceasta clasa;
-									-> doar clasa parinte implementeaza serializable
-									-> am observat ca serializarea se realizeaza corect; testul se gaseste in fisierul Test.java
+			* doar clasa parinte implementeaza serializable
+			* am observat ca serializarea se realizeaza corect; testul se gaseste in fisierul Test.java
 		->JustSubclassSerializable: in care implementez o clasa parinte si o clasa care extinde aceasta clasa;
-									-> doar clasa fiu implementeaza serializable 
-									-> la serializarea clasei parinte se arunca o exceptie pe care o prind
-									-> serializarea clasei fiu este realizata cu succes dar la deserializare se observa ca doar campurile din clasa fiu sunt corecte dupa citire, 
+			* doar clasa fiu implementeaza serializable 
+			* la serializarea clasei parinte se arunca o exceptie pe care o prind
+			* serializarea clasei fiu este realizata cu succes dar la deserializare se observa ca doar campurile din clasa fiu sunt corecte dupa citire, 
 									campurile preluate din clasa parinte fiind null; testul se gaseste in Test.java
