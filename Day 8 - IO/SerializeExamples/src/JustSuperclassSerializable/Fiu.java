@@ -1,5 +1,9 @@
 package JustSuperclassSerializable;
 
+import java.io.IOException;
+import java.io.NotSerializableException;
+import java.io.ObjectOutputStream;
+
 public class Fiu extends Parinte{
 
 	private int age;
@@ -21,4 +25,9 @@ public class Fiu extends Parinte{
 	public String toString(){
 		return this.getName() +" " +this.age + "\n";
 	}
+	
+	private void writeObject(ObjectOutputStream oos) throws IOException {
+		throw new NotSerializableException();
+	}
+
 }
