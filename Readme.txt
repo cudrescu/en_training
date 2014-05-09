@@ -32,7 +32,8 @@ Day 8: - IO
 	- SerializeExamples: contine 2 pachete:
 		->JustSuperclassSerializable: in care implementez o clasa parinte si o clasa care extinde aceasta clasa;
 			* doar clasa parinte implementeaza serializable
-			* am observat ca serializarea se realizeaza corect; testul se gaseste in fisierul Test.java
+			* in clasa fiu arunc o exceptie daca se incearca serializarea acesteia
+			* am observat ca serializarea se realizeaza corect pentru clasa parinte ,iar pentru fiu se arunca o exceptie pe care o prind; testul se gaseste in fisierul Test.java
 		->JustSubclassSerializable: in care implementez o clasa parinte si o clasa care extinde aceasta clasa;
 			* doar clasa fiu implementeaza serializable 
 			* la serializarea clasei parinte se arunca o exceptie pe care o prind
