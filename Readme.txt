@@ -38,4 +38,10 @@ Day 8: - IO
 			* doar clasa fiu implementeaza serializable 
 			* la serializarea clasei parinte se arunca o exceptie pe care o prind
 			* serializarea clasei fiu este realizata cu succes dar la deserializare se observa ca doar campurile din clasa fiu sunt corecte dupa citire, 
-									campurile preluate din clasa parinte fiind null; testul se gaseste in Test.java
+									campurile preluate din clasa parinte fiind null; testul se gaseste in Test.
+
+Day 9: - Threading:
+		- contine rezolvarea exercitiilor propuse in prezentarea pe aceasta tema
+
+Day 10: - Database fundamentals
+		- contine rezolvarea exercitiilor din prezentarea pe aceasta tema
