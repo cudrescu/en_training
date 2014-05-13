@@ -42,6 +42,8 @@ Day 8: - IO
 
 Day 9: - Threading:
 		- contine rezolvarea exercitiilor propuse in prezentarea pe aceasta tema
+		- acestea constau in implementarea a 4 variante de paralelizare pentru rezolvarea problemei din enunt si observarea timpilor de executie pentru fiecare din acestea
+		- am obtinut cel mai bun timp de rulare pentru varianta "SplitByChunks" si cel mai slab pentru cea in care scriu in lista initiala;
 
 Day 10: - Database fundamentals
 		- contine rezolvarea exercitiilor din prezentarea pe aceasta tema
