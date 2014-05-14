@@ -27,14 +27,16 @@ public class ManageConnection extends Thread{
 	
 	public void run(){
 		
-		 String clientMessage = "";
-		try {
-			clientMessage = in.readLine();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-         System.out.println(clientMessage);
-         String msg = scanner.nextLine();
-         out.println(msg);	
+		while(true){
+			String clientMessage = "";
+			try {
+				clientMessage = in.readLine();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			 System.out.println(clientMessage);
+			 String msg = scanner.nextLine();
+			 out.println(msg);
+		}		 
 	}
 }
