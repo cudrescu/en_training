@@ -1,0 +1,80 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="controller, service, dao"/>
+
+    <context:annotation-config/>
+
+    <mvc:annotation-driven />
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/web-resources/"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="databaseDS"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="false"/>
+                <property name="generateDdl" value="false"/>
+            </bean>
+        </property>
+        <property name="packagesToScan" value="models.mergeData" />
+    </bean>
+
+    <bean id="databaseDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/moviedb"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    <jpa:repositories base-package="dao"
+                      entity-manager-factory-ref="entityManagerFactory"
+                      transaction-manager-ref = "transactionManager"/>
+
+    <bean
+            id="movieService" class="service.impl.MovieServiceImpl">
+    </bean>
+
+    <bean
+            id="mainService" class="service.impl.MainServiceImpl" scope="prototype">
+    </bean>
+
+
+    <bean
+            id="imdbService" class="service.impl.ImdbServiceImpl">
+    </bean>
+
+    <bean
+            id="trackTVService" class="service.impl.TrackTVServiceImpl">
+    </bean>
+
+    <bean
+            id="rageTVService" class="service.impl.RageTVServiceImpl">
+    </bean>
+
+    <bean
+            id="cleanupService" class="service.impl.CleanupServiceImpl">
+    </bean>
+
+    <bean
+            id="restTemplate" class="org.springframework.web.client.RestTemplate" >
+    </bean>
+
+</beans>
